@@ -1,0 +1,1 @@
+all task 0x004
