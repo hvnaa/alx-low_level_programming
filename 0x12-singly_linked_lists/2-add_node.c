@@ -2,20 +2,21 @@
 #include <string.h>
 
 /**
- * add_node - Adds a new node at the beginning of a list_t list.
- * @head: Pointer to the pointer to the first node of the list.
- * @str: String to be duplicated.
- * Return: The address of the new element, or NULL if it failed.
+ * add_node - a function that adds a new node at
+ * the beginning of a list_t list.
+ * @head: pointer to the first node of the list
+ * @str: string to be duplicated
+ * Return: the address of the new element, or NULL if it failed
  */
 
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_node;
-	size_t len = 0; // Changed int to size_t
+	int i = 0;
 
-	while (str[len] != '\0')
+	while (str[i] != '\0')
 	{
-		len++;
+		i++;
 	}
 
 	new_node = malloc(sizeof(list_t));
@@ -31,7 +32,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	new_node->len = len; // Updated the variable name
+	new_node->len = i;
 	new_node->next = *head;
 	*head = new_node;
 
